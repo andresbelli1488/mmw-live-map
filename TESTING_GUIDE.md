@@ -443,5 +443,16 @@ Once all tests pass:
 3. Connect repo to Render (Blueprint)
 4. Deploy web + cron services
 5. Use `/api/bootstrap` on Render to seed initial data
+6. Set `DEPLOYED_BASE_URL` and run `npm run sync:awareness`
 
 See [SUPABASE_SETUP.md](SUPABASE_SETUP.md#production-deployment-render) for production deployment steps.
+
+## 12. Sync Awareness Validation
+
+```bash
+npm run sync:awareness
+```
+
+Expected:
+- Output includes `"syncHealthy": true`
+- `logs/sync-awareness-latest.json` exists and contains current branch/commit/deploy checks

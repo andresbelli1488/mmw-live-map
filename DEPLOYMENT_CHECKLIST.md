@@ -14,7 +14,7 @@ Use this checklist to go from local development to production deployment on Rend
 
 - [ ] **Schema Initialized**
   - [ ] SQL from `lib/postgres-schema.sql` executed in Supabase SQL Editor
-  - [ ] Tables created: `events`, `artists`, `artist_event_links`, `underground_connections`, `event_admin_overrides`, `provider_sources`, `leads`, `pulse`
+  - [ ] Tables created: `events`, `artists`, `artist_event_links`, `underground_connections`, `event_admin_overrides`, `provider_sources`, `leads`, `pulse`, `deployment_sync_state`, `deployment_audit_log`
   - [ ] See: [SUPABASE_SETUP.md](SUPABASE_SETUP.md#step-3-initialize-database-schema)
 
 - [ ] **Credentials Captured**
@@ -32,6 +32,7 @@ Use this checklist to go from local development to production deployment on Rend
   - [ ] `npm run dev` started
   - [ ] Health check: `curl http://localhost:3000/api/events` returns 200 OK
   - [ ] Bootstrap seed: `curl -X POST http://localhost:3000/api/bootstrap` returns ingested: 75
+  - [ ] Sync check: `npm run sync:awareness` returns `"syncHealthy": true`
   - [ ] See: [TESTING_GUIDE.md](TESTING_GUIDE.md)
 
 - [ ] **Admin Endpoints Tested**
@@ -56,6 +57,7 @@ Use this checklist to go from local development to production deployment on Rend
 
 - [ ] **Code Committed**
   - [ ] `npm run build` passes (0 errors)
+  - [ ] `npm run sync:awareness` stored latest report at `logs/sync-awareness-latest.json`
   - [ ] `git add .` (ensure `.env.local` and `node_modules/` are in `.gitignore`)
   - [ ] `git commit -m "Production backend: Supabase, RA/Shotgun providers, admin overrides, cron"`
   - [ ] `git push origin main`
@@ -93,6 +95,8 @@ Use this checklist to go from local development to production deployment on Rend
 - [ ] **Build & Deployment Verified**
   - [ ] Render build succeeds (check **Events/Logs** tab)
   - [ ] URL is live: `https://your-project.onrender.com/api/events` returns 200 OK
+  - [ ] Set `DEPLOYED_BASE_URL=https://your-project.onrender.com` and run `npm run sync:awareness`
+  - [ ] Confirm sync report shows `"syncHealthy": true`
 
 - [ ] **Cron Configured**
   - [ ] `render.yaml` is present in root with cron service config

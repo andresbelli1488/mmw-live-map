@@ -171,6 +171,14 @@ Monitor in Render dashboard:
 - Open service `mmw-live-map-ingest-cron`
 - Check execution history and logs
 
+Also run local awareness checks before and after releases:
+
+```bash
+npm run sync:awareness
+```
+
+Review `logs/sync-awareness-latest.json` to confirm local/git/deploy alignment.
+
 ---
 
 ## 4. Revealing Promo Codes

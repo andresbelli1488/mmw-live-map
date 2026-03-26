@@ -53,7 +53,7 @@ curl -X POST http://localhost:3000/api/admin/ingest
 	- `SHOTGUN_FEED_URL`
 	- `MMW_BASE_URL` (for Render cron service target)
 
-## Deploy on Render (bypass Vercel)
+## Deploy on Render
 
 1. Push this repo to GitHub.
 2. In Render, create a Blueprint and point it to this repository.
@@ -69,6 +69,20 @@ curl -X POST http://localhost:3000/api/admin/ingest
 	- `GET /api/events`
 	- `POST /api/bootstrap`
 	- `GET /api/pulse`
+
+## Synchronization and awareness
+
+Run this command before and after each deployment:
+
+```bash
+npm run sync:awareness
+```
+
+It creates `logs/sync-awareness-latest.json` with:
+- Local git cleanliness and branch/commit
+- Origin tracking state (ahead/behind)
+- Deployed health checks for `/api/events` and `/api/pulse` (when `DEPLOYED_BASE_URL` or `MMW_BASE_URL` is set)
+- A single `syncHealthy` flag for release readiness
 
 ## Admin overrides
 
@@ -88,3 +102,4 @@ Body fields supported:
 2. Implement real provider adapters in `lib/ingestion/providers.ts`.
 3. Add scheduled ingestion (for example Render cron service posting to `/api/admin/ingest`).
 4. Add admin overrides for promo codes, set times, underground flags, and location visibility.
+5. Track deployment state in `deployment_sync_state` and `deployment_audit_log`.

@@ -92,3 +92,24 @@ create table if not exists pulse (
   urgency text not null check (urgency in ('breaking', 'headsup', 'vibecheck')),
   created_at timestamptz not null default now()
 );
+
+create table if not exists deployment_sync_state (
+  id text primary key,
+  environment text not null,
+  git_branch text not null,
+  git_commit text not null,
+  remote_url text not null,
+  app_base_url text null,
+  status text not null default 'unknown',
+  generated_at timestamptz not null default now(),
+  notes text null
+);
+
+create table if not exists deployment_audit_log (
+  id text primary key,
+  level text not null check (level in ('info', 'warn', 'error')),
+  source text not null,
+  message text not null,
+  metadata jsonb not null default '{}'::jsonb,
+  created_at timestamptz not null default now()
+);

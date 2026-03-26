@@ -37,6 +37,8 @@ This creates all required tables:
 - `leads`
 - `provider_sources` (for admin URL management)
 - `pulse`
+- `deployment_sync_state`
+- `deployment_audit_log`
 
 ## Step 4: Create .env.local
 
@@ -58,6 +60,9 @@ EVENTBRITE_FEED_URL=https://your-feed.example.com/eventbrite-events.json
 
 # Render cron target URL
 MMW_BASE_URL=https://mmw-live-map.onrender.com
+
+# Optional deployed URL for local/git/deploy synchronization checks
+DEPLOYED_BASE_URL=https://mmw-live-map.onrender.com
 ```
 
 ## Step 5: Test Connection Locally
@@ -103,6 +108,16 @@ Once tested locally:
    - `INGEST_ADMIN_KEY`
 5. Deploy
 6. Cron service will trigger `/api/admin/ingest` every 30 minutes
+
+## Step 7: Synchronization Awareness Check
+
+After deploy, run locally:
+
+```bash
+npm run sync:awareness
+```
+
+This writes `logs/sync-awareness-latest.json` and confirms local/git/deploy alignment.
 
 ## Next: Admin URL Management
 
