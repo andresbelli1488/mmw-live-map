@@ -1,0 +1,691 @@
+[
+  {
+    "n": "Experts Only",
+    "v": "Club Space",
+    "d": "tue",
+    "t": "11 PM →",
+    "g": "Tech House",
+    "a": "John Summit · ANNA · Hot Since 82 · DJ Tennis · SG Lewis · Layton Giordani",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "STMPD RCRDS",
+    "v": "Surfcomber",
+    "d": "tue",
+    "t": "12 – 11 PM",
+    "g": "Progressive",
+    "a": "Third Party · DubVision · Julian Jordan · Matisse & Sadko",
+    "tk": "https://miamimusicweek.com"
+  },
+  {
+    "n": "Beatport × Mood Child",
+    "v": "Epic Pool",
+    "d": "tue",
+    "t": "5 – 10 PM",
+    "g": "House",
+    "a": "DJ Sneak · Jean Pierre · Manda Moor · Sirus Hood",
+    "ug": 1,
+    "tk": "https://miamimusicweek.com"
+  },
+  {
+    "n": "Satoshi Tomiie",
+    "v": "MODE",
+    "d": "tue",
+    "t": "10 PM – 5 AM",
+    "g": "Deep House",
+    "a": "Satoshi Tomiie · Kurilo · Melody",
+    "ug": 1
+  },
+  {
+    "n": "Luuk Van Dijk",
+    "v": "Jolene",
+    "d": "tue",
+    "t": "10 PM – 4 AM",
+    "g": "Tech House",
+    "a": "Luuk van Dijk · Elliot Schooling"
+  },
+  {
+    "n": "WMC Day 1",
+    "v": "Kimpton EPIC",
+    "d": "tue",
+    "t": "All Day",
+    "g": "Conference",
+    "a": "Industry Panels · Keynotes · A&R Lounge",
+    "tk": "https://wintermusicconference.com"
+  },
+  {
+    "n": "Monrroe + Sustance",
+    "v": "MAZUMA",
+    "d": "tue",
+    "t": "9 PM – 3 AM",
+    "g": "Bass/DnB",
+    "a": "ALPHAXERO · DB Cooper · MC Jumanji"
+  },
+  {
+    "n": "HUGEL",
+    "v": "Club Space",
+    "d": "wed",
+    "t": "11 PM →",
+    "g": "Tech House",
+    "a": "HUGEL + guests",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Richie Hawtin b2b Dubfire",
+    "v": "LION'S DEN",
+    "d": "wed",
+    "t": "9 PM – 3 AM",
+    "g": "Techno",
+    "a": "Richie Hawtin · Dubfire · Magda · Satoshi Tomiie",
+    "hi": 1,
+    "ug": 1
+  },
+  {
+    "n": "Factory Town I",
+    "v": "Factory Town",
+    "d": "wed",
+    "t": "10 PM – 7 AM",
+    "g": "Techno",
+    "a": "Alignment · Chris Avantgarde · Camoufly",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "RESISTANCE I",
+    "v": "M2",
+    "d": "wed",
+    "t": "10 PM – 5 AM",
+    "g": "Techno",
+    "a": "999999999 · Juliet Fox",
+    "hi": 1,
+    "tk": "https://miamimusicweek.com"
+  },
+  {
+    "n": "Oliver Heldens",
+    "v": "E11EVEN",
+    "d": "wed",
+    "t": "8 PM – 10 AM",
+    "g": "House",
+    "a": "Oliver Heldens",
+    "tk": "https://11miami.com"
+  },
+  {
+    "n": "Carlita + LP Giobbi",
+    "v": "LIV",
+    "d": "wed",
+    "t": "11:30 PM",
+    "g": "House",
+    "a": "Carlita · LP Giobbi"
+  },
+  {
+    "n": "Rekids 20 Years",
+    "v": "Kimpton EPIC",
+    "d": "wed",
+    "t": "3 – 10 PM",
+    "g": "Techno",
+    "a": "Danny Tenaglia · Radio Slave b2b DJ Minx · Doc Martin",
+    "ug": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Crystal Waters",
+    "v": "James L. Knight",
+    "d": "wed",
+    "t": "7 – 11 PM",
+    "g": "House",
+    "a": "Crystal Waters · Barbara Tucker · CeCe Peniston"
+  },
+  {
+    "n": "Perreo Del Futuro",
+    "v": "The Ground",
+    "d": "wed",
+    "t": "11 PM",
+    "g": "Latin/Neoperreo",
+    "a": "Six Sex",
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Tokimonsta",
+    "v": "ZeyZey",
+    "d": "wed",
+    "t": "8 PM",
+    "g": "Mixed",
+    "a": "Tokimonsta"
+  },
+  {
+    "n": "Incorrect Music",
+    "v": "MODE",
+    "d": "wed",
+    "t": "10 PM",
+    "g": "Tech House",
+    "a": "Cristoph · Anthony Attalla · Carlo Lio"
+  },
+  {
+    "n": "Coldharbour",
+    "v": "MAZUMA",
+    "d": "wed",
+    "t": "9 PM",
+    "g": "Trance",
+    "a": "BT · Dave Neven"
+  },
+  {
+    "n": "Balance Miami",
+    "v": "1-800-LUCKY",
+    "d": "wed",
+    "t": "4 PM",
+    "g": "Progressive",
+    "a": "Guy J · Guy Mantzur"
+  },
+  {
+    "n": "WMC Day 2",
+    "v": "Kimpton EPIC",
+    "d": "wed",
+    "t": "All Day",
+    "g": "Conference",
+    "a": "Panels · Networking",
+    "tk": "https://wintermusicconference.com"
+  },
+  {
+    "n": "Cloonee presents Hellbent",
+    "v": "Club Space",
+    "d": "thu",
+    "t": "11 PM →",
+    "g": "Tech House",
+    "a": "Cloonee · CamelPhat · Adam Ten · L.P. Rhythm",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "deadmau5",
+    "v": "E11EVEN",
+    "d": "thu",
+    "t": "8 PM →",
+    "g": "Progressive",
+    "a": "deadmau5",
+    "hi": 1,
+    "tk": "https://11miami.com"
+  },
+  {
+    "n": "RESISTANCE II — Eric Prydz",
+    "v": "M2",
+    "d": "thu",
+    "t": "10 PM",
+    "g": "Techno",
+    "a": "Eric Prydz · Argy · Jeremy Olander",
+    "hi": 1,
+    "tk": "https://miamimusicweek.com"
+  },
+  {
+    "n": "Factory Town II",
+    "v": "Factory Town",
+    "d": "thu",
+    "t": "10 PM – 7 AM",
+    "g": "Techno",
+    "a": "Justice · Archie Hamilton · Adrián Mills",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Defected — Loco Dice",
+    "v": "Sagamore Hotel",
+    "d": "thu",
+    "t": "1 – 11 PM",
+    "g": "House",
+    "a": "Loco Dice · Andrea Oliva · Harry Romero · HoneyLuv · Nic Fanciulli",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Gorgon City",
+    "v": "Toe Jam Backlot",
+    "d": "thu",
+    "t": "8 PM",
+    "g": "House",
+    "a": "Gorgon City · SG Lewis · Azzecca",
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Pardon My French",
+    "v": "Toe Jam XL",
+    "d": "thu",
+    "t": "8 PM",
+    "g": "Mixed",
+    "a": "A-Trak · Dillon Francis · Flosstradamus",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Nora En Pure — Purified",
+    "v": "Jungle Island",
+    "d": "thu",
+    "t": "7 PM",
+    "g": "Deep House",
+    "a": "Nora En Pure · Eli & Fur · Fideles · Dosem"
+  },
+  {
+    "n": "Bedrock Cruise",
+    "v": "South Beach Lady",
+    "d": "thu",
+    "t": "3:30 PM",
+    "g": "Progressive",
+    "a": "John Digweed · Spencer Brown",
+    "ug": 1,
+    "tk": "https://dice.fm/event/xe6nnm"
+  },
+  {
+    "n": "Toolroom Open Air",
+    "v": "Wynwood Marketplace",
+    "d": "thu",
+    "t": "3 PM",
+    "g": "Tech House",
+    "a": "Mark Knight · Cristoph · Noizu"
+  },
+  {
+    "n": "Hot Creations × TSZR",
+    "v": "Epic Pool",
+    "d": "thu",
+    "t": "3 PM",
+    "g": "House",
+    "a": "Skream b2b L.P. Rhythm · Sidney Charles",
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "DEADBEATS 10 Year",
+    "v": "MANA Wynwood",
+    "d": "thu",
+    "t": "9 PM",
+    "g": "Bass/DnB",
+    "a": "Boogie T · Bro Safari"
+  },
+  {
+    "n": "Cosmic Gate",
+    "v": "CLUTCH",
+    "d": "thu",
+    "t": "9 PM",
+    "g": "Trance",
+    "a": "Cosmic Gate · Estiva · Pretty Pink"
+  },
+  {
+    "n": "Infected Mushroom",
+    "v": "MAZUMA",
+    "d": "thu",
+    "t": "9 PM",
+    "g": "Trance",
+    "a": "Infected Mushroom · John 00 Fleming"
+  },
+  {
+    "n": "Ultra Naté Deep Sugar",
+    "v": "Triangle Little River",
+    "d": "thu",
+    "t": "8 PM",
+    "g": "House",
+    "a": "Ultra Naté · Soul Clap · Rissa Garcia",
+    "ug": 1
+  },
+  {
+    "n": "RAW CUTS",
+    "v": "Watson Island Park",
+    "d": "thu",
+    "t": "3 PM",
+    "g": "House",
+    "a": "DJ Tennis · Gerd Janson",
+    "ug": 1
+  },
+  {
+    "n": "WMC Day 3",
+    "v": "Kimpton EPIC",
+    "d": "thu",
+    "t": "All Day",
+    "g": "Conference",
+    "a": "A&R Pop-Up Lounge · Panels",
+    "tk": "https://wintermusicconference.com"
+  },
+  {
+    "n": "Ultra Music Festival",
+    "v": "Bayfront Park",
+    "d": "fri",
+    "t": "All Day",
+    "g": "Festival",
+    "a": "Martin Garrix b2b Alesso · Hardwell · Armin van Buuren · Dom Dolla · Skrillex",
+    "hi": 1,
+    "tk": "https://ultramusicfestival.com"
+  },
+  {
+    "n": "Where Are My Keys?",
+    "v": "94th Aero Squadron",
+    "d": "fri",
+    "t": "Fri → Sun",
+    "g": "Underground",
+    "a": "Ricardo Villalobos · Danny Daze · Soul Clap · Fumiya Tanaka · DJ Three · PARAMIDA · tINI · Shaun Reeves · Robag Wruhme · Daniel Bell · Wolf + Lamb · Ohm Hourani · Andrey Pushkarev · Anja Schneider · Krol · Voigtmann",
+    "hi": 1,
+    "ug": 1,
+    "tk": "https://dice.fm/event/dkqbaq"
+  },
+  {
+    "n": "Hot Since 82 — Knee Deep",
+    "v": "Sagamore Hotel",
+    "d": "fri",
+    "t": "1 – 11 PM",
+    "g": "Deep House",
+    "a": "Hot Since 82 · Luuk van Dijk · Prunk",
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Factory Town III",
+    "v": "Factory Town",
+    "d": "fri",
+    "t": "10 PM – 7 AM",
+    "g": "Techno",
+    "a": "Justice · Prospa · I Hate Models · Indira Paganotto",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "RESISTANCE III",
+    "v": "M2",
+    "d": "fri",
+    "t": "10 PM",
+    "g": "Techno",
+    "a": "Boris Brejcha · Miss Monique · Boys Noize",
+    "hi": 1,
+    "tk": "https://miamimusicweek.com"
+  },
+  {
+    "n": "Dubfire b2b Nick Warren",
+    "v": "Hyatt Dock",
+    "d": "fri",
+    "t": "3:30 PM",
+    "g": "Techno",
+    "a": "Dubfire · Nick Warren",
+    "ug": 1
+  },
+  {
+    "n": "House Is A Feeling",
+    "v": "1-800-LUCKY",
+    "d": "fri",
+    "t": "6 PM",
+    "g": "House",
+    "a": "DJ Sneak · Harry Romero · Tony Touch",
+    "ug": 1
+  },
+  {
+    "n": "LP Giobbi + Anja Schneider",
+    "v": "Do Not Sit",
+    "d": "fri",
+    "t": "10 PM",
+    "g": "House",
+    "a": "LP Giobbi · Anja Schneider",
+    "ug": 1
+  },
+  {
+    "n": "SlapFunk × Yoyaku",
+    "v": "Floyd",
+    "d": "fri",
+    "t": "11 PM",
+    "g": "Techno",
+    "a": "Marcel Dettmann · Doudou MD · CARISTA",
+    "ug": 1
+  },
+  {
+    "n": "Perspectives Yacht",
+    "v": "Hyatt Dock",
+    "d": "fri",
+    "t": "3 PM",
+    "g": "Progressive",
+    "a": "Rodriguez Jr. · Sydney Blu"
+  },
+  {
+    "n": "Ultra Music Festival",
+    "v": "Bayfront Park",
+    "d": "sat",
+    "t": "All Day",
+    "g": "Festival",
+    "a": "Carl Cox · John Summit · Eric Prydz · Amelie Lens b2b Sara Landry · Steve Aoki",
+    "hi": 1,
+    "tk": "https://ultramusicfestival.com"
+  },
+  {
+    "n": "Where Are My Keys? II",
+    "v": "94th Aero Squadron",
+    "d": "sat",
+    "t": "All Day",
+    "g": "Underground",
+    "a": "Robag Wruhme · SOLANA · Gerd Janson · Inbal · Wolf + Lamb · Tomas Station · Demi Riquisimo",
+    "hi": 1,
+    "ug": 1,
+    "tk": "https://dice.fm/event/dkqbaq"
+  },
+  {
+    "n": "Green Velvet + Loco Dice",
+    "v": "Toe Jam Backlot",
+    "d": "sat",
+    "t": "8 PM",
+    "g": "Tech House",
+    "a": "Green Velvet · Loco Dice · Discip · Roddy Lima",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Steve Aoki",
+    "v": "E11EVEN",
+    "d": "sat",
+    "t": "8 PM",
+    "g": "Mixed",
+    "a": "Steve Aoki · Cedric Gervais · Laidback Luke",
+    "tk": "https://11miami.com"
+  },
+  {
+    "n": "GORDO",
+    "v": "RC Cola Plant",
+    "d": "sat",
+    "t": "10 PM",
+    "g": "Tech House",
+    "a": "GORDO · Wakyin b2b Sistek",
+    "hi": 1
+  },
+  {
+    "n": "Michael Bibi b2b ANOTR",
+    "v": "Club Space",
+    "d": "sat",
+    "t": "11 PM →",
+    "g": "Tech House",
+    "a": "Michael Bibi b2b ANOTR · Beltran b2b Loco Dice · Marco Carola",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "Factory Town IV",
+    "v": "Factory Town",
+    "d": "sat",
+    "t": "10 PM",
+    "g": "Techno",
+    "a": "Patrick Topping · DJ TiGa · KETTAMA · PAWSA",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "RESISTANCE IV",
+    "v": "M2",
+    "d": "sat",
+    "t": "10 PM",
+    "g": "Techno",
+    "a": "Amelie Lens · Maceo Plex",
+    "hi": 1,
+    "tk": "https://miamimusicweek.com"
+  },
+  {
+    "n": "ANOTR",
+    "v": "Little River Studios",
+    "d": "sat",
+    "t": "5 PM",
+    "g": "House",
+    "a": "ANOTR",
+    "ug": 1
+  },
+  {
+    "n": "CV FREQS Modular Synth",
+    "v": "Carolina Sardi",
+    "d": "sat",
+    "t": "9 PM",
+    "g": "Underground",
+    "a": "ALX-106 · Mei · Eden Grey · Jorge Barr",
+    "ug": 1,
+    "tk": "FREE"
+  },
+  {
+    "n": "Soul Clap + Eats Everything",
+    "v": "UVA Wynwood",
+    "d": "sat",
+    "t": "4 PM",
+    "g": "House",
+    "a": "Soul Clap · Eats Everything · Kyle Walker · Mikey Lion",
+    "ug": 1
+  },
+  {
+    "n": "DJ Mag Pool — Cloonee",
+    "v": "Sagamore Hotel",
+    "d": "sat",
+    "t": "1 PM",
+    "g": "Tech House",
+    "a": "Cloonee + guests"
+  },
+  {
+    "n": "Roy Davis Jr",
+    "v": "Mad Radio",
+    "d": "sat",
+    "t": "9 PM",
+    "g": "House",
+    "a": "Roy Davis Jr · Atomyard · Penny Lane",
+    "ug": 1
+  },
+  {
+    "n": "Ultra Music Festival",
+    "v": "Bayfront Park",
+    "d": "sun",
+    "t": "All Day",
+    "g": "Festival",
+    "a": "Major Lazer · Steve Angello · Sasha & John Digweed · Dennis Cruz b2b Seth Troxler",
+    "hi": 1,
+    "tk": "https://ultramusicfestival.com"
+  },
+  {
+    "n": "30+ Hr Space Closing",
+    "v": "Club Space",
+    "d": "sun",
+    "t": "11 PM → Tue",
+    "g": "Underground",
+    "a": "Beltran b2b Loco Dice · ANOTR b2b Michael Bibi · Maher Daniel b2b Ricardo Villalobos · Marco Carola · Franky Rizardo b2b Ilario Alicante",
+    "hi": 1,
+    "ug": 1,
+    "tk": "https://dice.fm/event/mxl5nr"
+  },
+  {
+    "n": "Where Are My Keys? III",
+    "v": "94th Aero Squadron",
+    "d": "sun",
+    "t": "All Day",
+    "g": "Underground",
+    "a": "Sarahtonin 5-Year · Daniel Bell · Alex Pastor · Bruno Limma · Puma · R/V Calypso",
+    "ug": 1,
+    "tk": "https://dice.fm/event/dkqbaq"
+  },
+  {
+    "n": "Glitterbox Miami",
+    "v": "Sagamore Hotel",
+    "d": "sun",
+    "t": "1 – 11 PM",
+    "g": "Disco/Soul",
+    "a": "Derrick Carter · Gerd Janson · Natasha Diggs · Skream (disco) · The Brothers Macklovitch",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "RESISTANCE Closing",
+    "v": "M2",
+    "d": "sun",
+    "t": "10 PM",
+    "g": "Techno",
+    "a": "Carl Cox · Maceo Plex · Airrica",
+    "hi": 1,
+    "tk": "https://miamimusicweek.com"
+  },
+  {
+    "n": "DJ Snake 10th Anniv.",
+    "v": "Sable Miami",
+    "d": "sun",
+    "t": "8 PM",
+    "g": "Mixed",
+    "a": "DJ Snake",
+    "hi": 1
+  },
+  {
+    "n": "Danny Daze b2b Phoenecia",
+    "v": "The Ground",
+    "d": "sun",
+    "t": "11 PM",
+    "g": "Underground",
+    "a": "Danny Daze b2b Phoenecia · Coffintexts b2b Eco-Sistema",
+    "ug": 1
+  },
+  {
+    "n": "MoBlack Records",
+    "v": "Toe Jam Backlot",
+    "d": "sun",
+    "t": "9 PM",
+    "g": "House",
+    "a": "Bradley Zero · DJ Holographic · Francis Mercier"
+  },
+  {
+    "n": "Steve Angello",
+    "v": "Toe Jam XL",
+    "d": "sun",
+    "t": "8 PM",
+    "g": "Progressive",
+    "a": "Steve Angello · salute b2b DJ Seinfeld"
+  },
+  {
+    "n": "Maceo Plex Closing",
+    "v": "Jolene",
+    "d": "sun",
+    "t": "Late",
+    "g": "Techno",
+    "a": "Maceo Plex · Jonny From Space b2b Bakke",
+    "ug": 1
+  },
+  {
+    "n": "Factory Town Closing",
+    "v": "Factory Town",
+    "d": "sun",
+    "t": "10 PM",
+    "g": "Techno",
+    "a": "I Hate Models · Indira Paganotto · Nico Moreno",
+    "hi": 1,
+    "tk": "https://dice.fm"
+  },
+  {
+    "n": "OUTRO Closing",
+    "v": "MANA Wynwood",
+    "d": "sun",
+    "t": "9 PM",
+    "g": "Bass/DnB",
+    "a": "SVDDEN DEATH · Ray Volpe · Sullivan King"
+  },
+  {
+    "n": "Anjunadeep Open Air",
+    "v": "Wynwood Marketplace",
+    "d": "sun",
+    "t": "2 PM",
+    "g": "Deep House",
+    "a": "Amtrac · Ben Böhmer · Rezident"
+  },
+  {
+    "n": "Cristoph COS",
+    "v": "MAZUMA",
+    "d": "sun",
+    "t": "9 PM",
+    "g": "Progressive",
+    "a": "Cristoph · Dirty South · Jeremy Olander"
+  }
+]
