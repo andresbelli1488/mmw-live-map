@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: mmw-live-map
+    env: node
+    plan: starter
+    region: oregon
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/events
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: INGEST_ADMIN_KEY
+        sync: false
+      - key: RA_FEED_URL
+        sync: false
+      - key: SHOTGUN_FEED_URL
+        sync: false
+      - key: DICE_FEED_URL
+        sync: false
+      - key: EVENTBRITE_FEED_URL
+        sync: false
+
+  - type: cron
+    name: mmw-live-map-ingest-cron
+    env: node
+    schedule: "*/30 * * * *"
+    buildCommand: npm ci
+    startCommand: node scripts/render-ingest-cron.mjs
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: MMW_BASE_URL
+        sync: false
+      - key: INGEST_ADMIN_KEY
+        sync: false

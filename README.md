@@ -44,13 +44,31 @@ curl -X POST http://localhost:3000/api/admin/ingest
 	- `NEXT_PUBLIC_SUPABASE_URL`
 	- `SUPABASE_SERVICE_ROLE_KEY`
 - In-memory fallback remains active when those env vars are absent.
-- Cron-ready ingestion is configured in `vercel.json` for `/api/admin/ingest`.
+- Render-ready deployment is configured in `render.yaml` with a 30-minute cron service.
 - Optional endpoint hardening is available via `INGEST_ADMIN_KEY` header (`x-ingest-key`).
 - Real provider adapters can ingest from JSON feed URLs:
 	- `RA_FEED_URL`
 	- `DICE_FEED_URL`
 	- `EVENTBRITE_FEED_URL`
 	- `SHOTGUN_FEED_URL`
+	- `MMW_BASE_URL` (for Render cron service target)
+
+## Deploy on Render (bypass Vercel)
+
+1. Push this repo to GitHub.
+2. In Render, create a Blueprint and point it to this repository.
+3. Render will detect `render.yaml` and create:
+	- Web service: `mmw-live-map`
+	- Cron service: `mmw-live-map-ingest-cron`
+4. Set required env vars in Render:
+	- `NEXT_PUBLIC_SUPABASE_URL`
+	- `SUPABASE_SERVICE_ROLE_KEY`
+	- `INGEST_ADMIN_KEY`
+	- `MMW_BASE_URL` (the live Render web URL)
+5. Deploy and verify:
+	- `GET /api/events`
+	- `POST /api/bootstrap`
+	- `GET /api/pulse`
 
 ## Admin overrides
 

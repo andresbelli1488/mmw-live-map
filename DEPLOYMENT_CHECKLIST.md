@@ -1,6 +1,6 @@
 # Deployment Checklist: MMW Live Map
 
-Use this checklist to go from local development to production deployment on Vercel.
+Use this checklist to go from local development to production deployment on Render.
 
 ---
 
@@ -61,23 +61,23 @@ Use this checklist to go from local development to production deployment on Verc
   - [ ] `git push origin main`
 
 - [ ] **GitHub Remote Ready**
-  - [ ] Repo is public or accessible to Vercel
-  - [ ] Primary branch is `main` (or configured in Vercel)
+  - [ ] Repo is public or accessible to Render
+  - [ ] Primary branch is `main` (or configured in Render)
 
 ---
 
-## Vercel Deployment
+## Render Deployment
 
-- [ ] **Vercel Project Linked**
-  - [ ] Go to [vercel.com](https://vercel.com)
-  - [ ] Click "Add New..." → "Project"
+- [ ] **Render Blueprint Linked**
+  - [ ] Go to [render.com](https://render.com)
+  - [ ] Click "New" → "Blueprint"
   - [ ] Import GitHub repo for MMW Live Map
-  - [ ] Select root directory: `.` (root)
-  - [ ] Click "Deploy" (this will fail initially, but that's OK)
+  - [ ] Confirm `render.yaml` is detected
+  - [ ] Create services (`mmw-live-map`, `mmw-live-map-ingest-cron`)
 
 - [ ] **Environment Secrets Configured**
-  - [ ] After first failed deploy, go to **Settings → Environment Variables**
-  - [ ] Add these variables (copy from `.env.local`):
+  - [ ] In Render dashboard, open both services and set environment variables
+  - [ ] Add these variables to web service:
     - [ ] `NEXT_PUBLIC_SUPABASE_URL`
     - [ ] `SUPABASE_SERVICE_ROLE_KEY`
     - [ ] `INGEST_ADMIN_KEY` (if using)
@@ -85,46 +85,47 @@ Use this checklist to go from local development to production deployment on Verc
     - [ ] `SHOTGUN_FEED_URL` (if configuring external curated feeds)
     - [ ] `DICE_FEED_URL` (optional)
     - [ ] `EVENTBRITE_FEED_URL` (optional)
-  - [ ] **Important:** Mark `SUPABASE_SERVICE_ROLE_KEY` as "Encrypted" for extra safety
-  - [ ] Click "Save" → "Redeploy" to apply changes
+  - [ ] Add these variables to cron service:
+    - [ ] `MMW_BASE_URL` (e.g. `https://mmw-live-map.onrender.com`)
+    - [ ] `INGEST_ADMIN_KEY`
+  - [ ] Save and redeploy both services
 
 - [ ] **Build & Deployment Verified**
-  - [ ] Vercel build succeeds (check **Deployments** tab)
-  - [ ] URL is live: `https://your-project.vercel.app/api/events` returns 200 OK
-  - [ ] See: [SUPABASE_SETUP.md](SUPABASE_SETUP.md#production-deployment-vercel)
+  - [ ] Render build succeeds (check **Events/Logs** tab)
+  - [ ] URL is live: `https://your-project.onrender.com/api/events` returns 200 OK
 
 - [ ] **Cron Configured**
-  - [ ] `vercel.json` is present in root with cron config
-  - [ ] Go to **Settings → Cron Jobs** in Vercel dashboard
-  - [ ] Should show: `/api/admin/ingest` scheduled for `*/30 * * * *` (every 30 min)
-  - [ ] If cron is missing, commit `vercel.json` again and re-deploy
+  - [ ] `render.yaml` is present in root with cron service config
+  - [ ] Confirm cron service `mmw-live-map-ingest-cron` exists in Render
+  - [ ] Confirm schedule is `*/30 * * * *` (every 30 min)
+  - [ ] Check cron logs to verify successful ingestion calls
 
 ---
 
 ## Post-Deployment (Production)
 
 - [ ] **Initial Data Seed**
-  - [ ] Trigger: `curl https://your-project.vercel.app/api/bootstrap`
+  - [ ] Trigger: `curl https://your-project.onrender.com/api/bootstrap`
   - [ ] Should return `{ ingested: 75, undergroundConnections: ..., generatedAt: "..." }`
   - [ ] Verify in Supabase: `select count(*) from events;` → should show 75
 
 - [ ] **Admin Override Test (Production)**
   - [ ] Test override endpoint:
     ```bash
-    curl -X POST https://your-project.vercel.app/api/admin/events/seed_experts-only-space-opening/override \
+    curl -X POST https://your-project.onrender.com/api/admin/events/seed_experts-only-space-opening/override \
       -H "x-ingest-key: YOUR_INGEST_ADMIN_KEY" \
       -d '{"promoCode": "TEST123"}'
     ```
   - [ ] Should return 200 OK with updated event
 
 - [ ] **Cron Ingestion Log**
-  - [ ] Go to Vercel **Settings → Cron Jobs**
-  - [ ] Wait 30 minutes OR manually trigger (if Vercel supports it)
+  - [ ] Open Render cron service logs (`mmw-live-map-ingest-cron`)
+  - [ ] Wait 30 minutes OR trigger a manual run from Render dashboard
   - [ ] See execution log and verify no errors
   - [ ] Check Supabase: `select count(*) from events;` should be updated
 
 - [ ] **Monitor Initial 24 Hours**
-  - [ ] Check Vercel error logs (zero 5xx errors)
+  - [ ] Check Render service logs (zero 5xx errors)
   - [ ] Check cron execution logs (successful runs)
   - [ ] Sample event from `/api/events` and verify structure
   - [ ] Test promo reveal and event save endpoints from frontend
@@ -148,7 +149,7 @@ Use this checklist to go from local development to production deployment on Verc
   - [ ] See: [ADMIN_GUIDE.md](ADMIN_GUIDE.md#2-event-admin-overrides)
 
 - [ ] **Logs & Monitoring**
-  - [ ] Vercel dashboard bookmarked for quick status checks
+  - [ ] Render dashboard bookmarked for quick status checks
   - [ ] Supabase dashboard bookmarked for database queries
   - [ ] Team has SQL access for provider stats
 
@@ -158,10 +159,10 @@ Use this checklist to go from local development to production deployment on Verc
 
 If production breaks:
 
-1. **Immediate:** Disable cron by removing `vercel.json` and re-deploying
-2. **Fallback:** Vercel will auto-roll back to previous successful deployment
-3. **Manual rollback:** In Vercel **Deployments**, click previous stable version and click "Promote to Production"
-4. **Debug:** Check logs in Vercel and Supabase to identify root cause
+1. **Immediate:** Pause `mmw-live-map-ingest-cron` in Render
+2. **Fallback:** Roll back web service to previous successful deploy in Render
+3. **Manual rollback:** Use Render service deploy history and redeploy prior version
+4. **Debug:** Check logs in Render and Supabase to identify root cause
 
 ---
 
@@ -185,9 +186,9 @@ Your deployment is **live and ready** when:
 ✅ `/api/bootstrap` ingests seed events (201 Created)  
 ✅ `/api/admin/ingest` accepts requests with valid admin key (200 OK)  
 ✅ `/api/admin/events/[id]/override` patches event metadata (200 OK)  
-✅ Cron job runs automatically every 30 minutes (Vercel dashboard shows executions)  
+✅ Cron job runs automatically every 30 minutes (Render cron logs show executions)  
 ✅ Supabase database contains events, artists, connections, and leads  
-✅ Zero 5xx errors in Vercel logs over 24-hour period  
+✅ Zero 5xx errors in Render logs over 24-hour period  
 
 ---
 
