@@ -84,4 +84,27 @@ report.syncHealthy =
 mkdirSync(resolve("logs"), { recursive: true });
 writeFileSync(resolve("logs", "sync-awareness-latest.json"), `${JSON.stringify(report, null, 2)}\n`);
 
+// Persist to deployment_sync_state via admin endpoint if base URL + key are available
+const persistBase = deployedBase || process.env.MMW_BASE_URL || "";
+const adminKey = process.env.INGEST_ADMIN_KEY || "";
+if (persistBase && adminKey) {
+  const base = persistBase.replace(/\/$/, "");
+  try {
+    const res = await fetch(`${base}/api/admin/sync`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-ingest-key": adminKey,
+      },
+      body: JSON.stringify(report),
+    });
+    const persisted = { ok: res.ok, status: res.status };
+    report.persisted = persisted;
+    writeFileSync(resolve("logs", "sync-awareness-latest.json"), `${JSON.stringify(report, null, 2)}\n`);
+  } catch (err) {
+    report.persisted = { ok: false, status: 0, error: String(err) };
+    writeFileSync(resolve("logs", "sync-awareness-latest.json"), `${JSON.stringify(report, null, 2)}\n`);
+  }
+}
+
 console.log(JSON.stringify(report, null, 2));

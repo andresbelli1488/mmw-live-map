@@ -53,6 +53,18 @@ export type PulseItem = {
   createdAt: string;
 };
 
+export type SyncStateRecord = {
+  id: string;
+  environment: string;
+  gitBranch: string;
+  gitCommit: string;
+  remoteUrl: string;
+  appBaseUrl: string | null;
+  status: "healthy" | "degraded" | "unknown";
+  generatedAt: string;
+  notes: string | null;
+};
+
 export type ArtistRecord = {
   id: string;
   name: string;

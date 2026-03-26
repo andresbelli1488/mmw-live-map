@@ -7,6 +7,7 @@ import type {
   Genre,
   LeadRecord,
   PulseItem,
+  SyncStateRecord,
 } from "@/lib/types";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
@@ -28,6 +29,7 @@ export interface DatabaseAdapter {
   getAllArtistEventLinks(): Promise<ArtistEventLink[]>;
   getPulseItems(limit?: number): Promise<PulseItem[]>;
   createPulseItem(item: PulseItem): Promise<PulseItem>;
+  upsertSyncState(record: SyncStateRecord): Promise<SyncStateRecord>;
 }
 
 class InMemoryDatabase implements DatabaseAdapter {
@@ -148,6 +150,11 @@ class InMemoryDatabase implements DatabaseAdapter {
       this.pulse = this.pulse.slice(this.pulse.length - 100);
     }
     return item;
+  }
+
+  async upsertSyncState(record: SyncStateRecord): Promise<SyncStateRecord> {
+    // in-memory: no-op, just return the record
+    return record;
   }
 }
 
@@ -458,6 +465,26 @@ class SupabaseDatabase implements DatabaseAdapter {
       urgency: data.urgency,
       createdAt: data.created_at,
     };
+  }
+
+  async upsertSyncState(record: SyncStateRecord): Promise<SyncStateRecord> {
+    const { error } = await this.client.from("deployment_sync_state").upsert({
+      id: record.id,
+      environment: record.environment,
+      git_branch: record.gitBranch,
+      git_commit: record.gitCommit,
+      remote_url: record.remoteUrl,
+      app_base_url: record.appBaseUrl,
+      status: record.status,
+      generated_at: record.generatedAt,
+      notes: record.notes,
+    });
+    if (error) {
+      const dbError = error as { code?: string };
+      if (dbError.code === "42P01") return record; // table not yet created
+      throw error;
+    }
+    return record;
   }
 }
 
