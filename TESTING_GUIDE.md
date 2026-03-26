@@ -1,6 +1,6 @@
 # Local Testing Guide
 
-This guide shows how to test all endpoints and workflows locally before deploying to Vercel.
+This guide shows how to test all endpoints and workflows locally before deploying to Render.
 
 ## Prerequisites
 
@@ -47,8 +47,7 @@ curl -X POST http://localhost:3000/api/bootstrap \
 Expected response (201 Created):
 ```json
 {
-  "ok": true,
-  "ingested": 2,
+  "ingested": 75,
   "undergroundConnections": 0,
   "generatedAt": "2026-03-25T14:30:45Z"
 }
@@ -60,7 +59,7 @@ Expected response (201 Created):
 curl http://localhost:3000/api/events
 ```
 
-Should now return 2 seed events (Experts Only, Warehouse Signal).
+Should now return the full 75-event MMW 2026 seed dataset.
 
 ---
 
@@ -245,9 +244,8 @@ curl -X POST http://localhost:3000/api/admin/ingest \
 Expected response (200 OK):
 ```json
 {
-  "ok": true,
-  "ingested": 2,
-  "undergroundConnections": 1,
+  "ingested": 75,
+  "undergroundConnections": 0,
   "generatedAt": "2026-03-25T14:40:00Z"
 }
 ```
@@ -413,7 +411,7 @@ curl -X POST http://localhost:3000/api/events/seed_experts-only-space-opening/sa
 
 # 8. Check leads were captured
 curl http://localhost:3000/api/events | jq '.events | length'
-# Should show 2 events
+# Should show 75 events
 
 # 9. Check leads in DB
 # In Supabase SQL Editor:
@@ -442,8 +440,8 @@ select count(*) from leads;
 Once all tests pass:
 1. Commit code to Git
 2. Push to GitHub
-3. Connect repo to Vercel
-4. Deploy (cron will auto-enable)
-5. Use `/api/bootstrap` on Vercel to seed initial data
+3. Connect repo to Render (Blueprint)
+4. Deploy web + cron services
+5. Use `/api/bootstrap` on Render to seed initial data
 
-See [SUPABASE_SETUP.md](SUPABASE_SETUP.md#production-deployment-vercel) for production deployment steps.
+See [SUPABASE_SETUP.md](SUPABASE_SETUP.md#production-deployment-render) for production deployment steps.

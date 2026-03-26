@@ -86,5 +86,5 @@ Body fields supported:
 
 1. Replace `InMemoryDatabase` in `lib/db.ts` with Prisma/Drizzle/Supabase adapter.
 2. Implement real provider adapters in `lib/ingestion/providers.ts`.
-3. Add scheduled ingestion (for example Vercel Cron to `/api/admin/ingest`).
+3. Add scheduled ingestion (for example Render cron service posting to `/api/admin/ingest`).
 4. Add admin overrides for promo codes, set times, underground flags, and location visibility.

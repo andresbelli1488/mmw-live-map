@@ -36,6 +36,7 @@ This creates all required tables:
 - `event_admin_overrides`
 - `leads`
 - `provider_sources` (for admin URL management)
+- `pulse`
 
 ## Step 4: Create .env.local
 
@@ -54,6 +55,9 @@ RA_FEED_URL=https://your-feed.example.com/ra-events.json
 SHOTGUN_FEED_URL=https://your-feed.example.com/shotgun-events.json
 DICE_FEED_URL=https://your-feed.example.com/dice-events.json
 EVENTBRITE_FEED_URL=https://your-feed.example.com/eventbrite-events.json
+
+# Render cron target URL
+MMW_BASE_URL=https://mmw-live-map.onrender.com
 ```
 
 ## Step 5: Test Connection Locally
@@ -83,19 +87,22 @@ See [ADMIN_GUIDE.md](ADMIN_GUIDE.md) for instructions on adding RA/Shotgun URLs 
 | "relation does not exist" | Schema didn't run; re-run `lib/postgres-schema.sql` |
 | Events appear empty after seed | Run `POST /api/bootstrap` to trigger ingestion |
 
-## Production Deployment (Vercel)
+## Production Deployment (Render)
 
 Once tested locally:
 
 1. Push code to GitHub (include `.env.local` in `.gitignore`)
-2. Connect repo to Vercel
-3. Add these secrets in Vercel **Settings → Environment Variables**:
+2. Connect repo to Render via Blueprint (`render.yaml`)
+3. Add these secrets in Render web service environment:
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `SUPABASE_SERVICE_ROLE_KEY`
    - `INGEST_ADMIN_KEY` (if using)
    - `RA_FEED_URL`, `SHOTGUN_FEED_URL`, etc. (if using)
-4. Deploy
-5. Cron will automatically trigger `/api/admin/ingest` every 30 minutes
+4. Add these secrets in Render cron service environment:
+   - `MMW_BASE_URL`
+   - `INGEST_ADMIN_KEY`
+5. Deploy
+6. Cron service will trigger `/api/admin/ingest` every 30 minutes
 
 ## Next: Admin URL Management
 

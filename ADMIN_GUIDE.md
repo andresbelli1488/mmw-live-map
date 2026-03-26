@@ -165,11 +165,11 @@ Response includes telemetry:
 
 ### Automatic Cron Ingestion
 
-Once deployed to Vercel, ingestion automatically runs every 30 minutes via `vercel.json` config.
+Once deployed to Render, ingestion automatically runs every 30 minutes via `render.yaml` cron service.
 
-Monitor in Vercel dashboard:
-- Go to **Deployments → Cron Jobs**
-- See last execution time and logs
+Monitor in Render dashboard:
+- Open service `mmw-live-map-ingest-cron`
+- Check execution history and logs
 
 ---
 
@@ -227,19 +227,19 @@ group by provider_name;
 **Before MMW Starts:**
 1. Add all known RA/Shotgun URLs to `provider_sources` table
 2. Set `RA_FEED_URL` and `SHOTGUN_FEED_URL` if you have curated JSON feeds
-3. Deploy to Vercel; cron starts automatically
+3. Deploy to Render with `render.yaml`; cron starts automatically
 4. Trigger `/api/bootstrap` to seed initial data
 
 **During MMW:**
 1. Thrice daily: Review ingested events for accuracy
 2. As needed: Use admin override endpoint to fix set times, promo codes, underground flags
-3. Monitor cron logs in Vercel dashboard
+3. Monitor cron logs in Render dashboard
 4. Add new event URLs to `provider_sources` as discovered
 
 **Troubleshooting:**
 - No events ingested? Check `provider_sources` table is populated and has `status = 'active'`
 - Event data looks wrong? Use `/api/admin/events/[id]/override` to patch
-- Cron not running? Check Vercel `vercel.json` is deployed and secrets are set
+- Cron not running? Check Render cron service env vars (`MMW_BASE_URL`, `INGEST_ADMIN_KEY`) and logs
 
 ---
 
