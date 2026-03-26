@@ -14,7 +14,7 @@ Use this checklist to go from local development to production deployment on Verc
 
 - [ ] **Schema Initialized**
   - [ ] SQL from `lib/postgres-schema.sql` executed in Supabase SQL Editor
-  - [ ] Tables created: `events`, `artists`, `artist_event_links`, `underground_connections`, `event_admin_overrides`, `provider_sources`, `leads`
+  - [ ] Tables created: `events`, `artists`, `artist_event_links`, `underground_connections`, `event_admin_overrides`, `provider_sources`, `leads`, `pulse`
   - [ ] See: [SUPABASE_SETUP.md](SUPABASE_SETUP.md#step-3-initialize-database-schema)
 
 - [ ] **Credentials Captured**
